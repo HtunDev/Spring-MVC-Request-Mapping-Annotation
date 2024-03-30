@@ -12,5 +12,9 @@
 	<ul>
 		<li><a href="multiAction">Multi Actions</a></li>
 	</ul>
+	
+	<ul>
+		<li><a href="inputs">User Inputs</a></li>
+	</ul>
 </body>
 </html>
