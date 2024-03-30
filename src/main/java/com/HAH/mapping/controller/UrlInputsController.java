@@ -24,14 +24,14 @@ public class UrlInputsController {
 		return "inputs";
 	}
 
-	@GetMapping("{date}")
+	@GetMapping("{date:\\d{4}-\\d{2}-\\d{2}}")
 	public String findByDate(@PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date, Model model) {
 		model.addAttribute("date", date);
 		return "inputs";
 	}
 
-	@GetMapping("enum/{level}")
-	public String findByLevel(@PathVariable JavaCourseLevel level,Model model) {
+	@GetMapping("{level:Basic|Advance|Intermediate}")
+	public String findByLevel(@PathVariable JavaCourseLevel level, Model model) {
 		model.addAttribute("level", level);
 		return "inputs";
 	}
