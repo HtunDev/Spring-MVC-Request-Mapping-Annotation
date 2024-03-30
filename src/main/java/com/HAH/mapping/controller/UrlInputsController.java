@@ -6,6 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.MatrixVariable;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -33,6 +34,14 @@ public class UrlInputsController {
 	@GetMapping("{level:Basic|Advance|Intermediate}")
 	public String findByLevel(@PathVariable JavaCourseLevel level, Model model) {
 		model.addAttribute("level", level);
+		return "inputs";
+	}
+
+	@GetMapping("/matrix/{product}")
+	public String metrixProduct(@PathVariable String product, @MatrixVariable String size,
+			@MatrixVariable Integer count, Model model) {
+		var message = "Product : %s, Size : %s, Count : %d".formatted(product, size, count);
+		model.addAttribute("product", message);
 		return "inputs";
 	}
 }
