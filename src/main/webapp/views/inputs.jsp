@@ -24,6 +24,9 @@
 		<c:if test="${not empty product}">
 			<h3>${product}</h3>
 		</c:if>
+		<c:if test="${not empty requestParamMessage}">
+			<h3>${requestParamMessage}</h3>
+		</c:if>
 	</div>
 
 	<ul>
@@ -35,6 +38,10 @@
 			href="${pathEnumLink}">Current Level</a></li>
 		<li><c:url value="/inputs/matrix/Uniqlo Shirt;size=Large;count=1"
 				var="matrixPathLink"></c:url> <a href="${matrixPathLink}">Product</a></li>
+		<li><c:url
+				value="/inputs/request?product=Addidas Shirt&width=18&length=32"
+				var="requestParamLink"></c:url> <a href="${requestParamLink}">Product
+				Request</a></li>
 	</ul>
 </body>
 </html>

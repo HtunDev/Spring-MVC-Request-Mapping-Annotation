@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.MatrixVariable;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("inputs")
@@ -38,10 +39,20 @@ public class UrlInputsController {
 	}
 
 	@GetMapping("/matrix/{product}")
-	public String metrixProduct(@PathVariable String product, @MatrixVariable String size,
-			@MatrixVariable Integer count, Model model) {
+	public String matrixProduct(@PathVariable String product, @MatrixVariable(required = false) String size,
+			@MatrixVariable(required = false, defaultValue = "1") Integer count, Model model) {
 		var message = "Product : %s, Size : %s, Count : %d".formatted(product, size, count);
 		model.addAttribute("product", message);
+		return "inputs";
+	}
+
+	@GetMapping("request")
+	public String usingRequestParam(@RequestParam String product,
+			@RequestParam(required = false, defaultValue = "30") Integer width,
+			@RequestParam(required = false, defaultValue = "30") Integer length, Model model) {
+
+		var requestParamMessage = "Product : %s, Width : %d, Length : %d".formatted(product, width, length);
+		model.addAttribute("requestParamMessage", requestParamMessage);
 		return "inputs";
 	}
 }
