@@ -7,6 +7,10 @@
 <title>Home Page</title>
 </head>
 <body>
-	<h1>Using Request Mapping Annotations</h1>
+	<h1>Using Request Mapping Annotations In Home Page</h1>
+	
+	<ul>
+		<li><a href="multiAction">Multi Actions</a></li>
+	</ul>
 </body>
 </html>
