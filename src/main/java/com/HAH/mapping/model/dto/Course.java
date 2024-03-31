@@ -6,9 +6,21 @@ public class Course {
 
 	private int id;
 	private String name;
-	private String duration;
+	private int duration;
 	private String level;
-	private String fees;
+	private int fees;
+
+	public Course() {
+
+	}
+
+	public Course(String name, int duration, String level, int fees) {
+		super();
+		this.name = name;
+		this.duration = duration;
+		this.level = level;
+		this.fees = fees;
+	}
 
 	public int getId() {
 		return id;
@@ -26,11 +38,11 @@ public class Course {
 		this.name = name;
 	}
 
-	public String getDuration() {
+	public int getDuration() {
 		return duration;
 	}
 
-	public void setDuration(String duration) {
+	public void setDuration(int duration) {
 		this.duration = duration;
 	}
 
@@ -42,11 +54,11 @@ public class Course {
 		this.level = level;
 	}
 
-	public String getFees() {
+	public int getFees() {
 		return fees;
 	}
 
-	public void setFees(String fees) {
+	public void setFees(int fees) {
 		this.fees = fees;
 	}
 
@@ -64,9 +76,8 @@ public class Course {
 		if (getClass() != obj.getClass())
 			return false;
 		Course other = (Course) obj;
-		return Objects.equals(duration, other.duration) && Objects.equals(fees, other.fees) && id == other.id
-				&& Objects.equals(level, other.level) && Objects.equals(name, other.name);
+		return duration == other.duration && fees == other.fees && id == other.id && Objects.equals(level, other.level)
+				&& Objects.equals(name, other.name);
 	}
 
-	
 }

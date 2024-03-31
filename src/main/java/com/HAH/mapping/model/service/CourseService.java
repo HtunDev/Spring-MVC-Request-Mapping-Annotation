@@ -3,6 +3,8 @@ package com.HAH.mapping.model.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,15 @@ public class CourseService {
 
 	public CourseService() {
 		courseRepo = new ArrayList<>();
+	}
+
+	@PostConstruct
+	public void init() {
+		create(new Course("Java Basic", 4, "Basic", 180000));
+		create(new Course("Spring", 5, "Intermediate", 180000));
+		create(new Course("Angular", 3, "Advance", 180000));
+		create(new Course("React", 3, "Advance", 180000));
+
 	}
 
 	public int create(Course c) {

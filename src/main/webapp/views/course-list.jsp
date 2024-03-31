@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -19,6 +20,33 @@
 	`
 	<div class="container pt-4">
 		<h1>Course List</h1>
+
+		<div class="mt-4">
+			<table class="table">
+
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Duration</th>
+						<th>Level</th>
+						<th>Fees</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<c:forEach var="c" items="${list}">
+						<tr>
+							<td>${c.id}</td>
+							<td>${c.name}</td>
+							<td>${c.duration}</td>
+							<td>${c.level}</td>
+							<td>${c.fees}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
 	</div>
 </body>
 </html>
