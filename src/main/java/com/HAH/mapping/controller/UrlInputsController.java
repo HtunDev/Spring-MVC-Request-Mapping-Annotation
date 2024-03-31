@@ -46,7 +46,7 @@ public class UrlInputsController {
 		return "inputs";
 	}
 
-	@GetMapping("request")
+	@GetMapping("/request")
 	public String usingRequestParam(@RequestParam String product,
 			@RequestParam(required = false, defaultValue = "30") Integer width,
 			@RequestParam(required = false, defaultValue = "30") Integer length, Model model) {
