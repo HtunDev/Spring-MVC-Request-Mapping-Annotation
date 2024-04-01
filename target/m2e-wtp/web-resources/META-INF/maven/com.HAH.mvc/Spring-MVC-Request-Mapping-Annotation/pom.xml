@@ -58,9 +58,6 @@
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>10.0.7</version>
-				<configuration>
-					<scan>1</scan>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>

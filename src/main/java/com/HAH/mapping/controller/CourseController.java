@@ -1,5 +1,7 @@
 package com.HAH.mapping.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,16 +13,23 @@ import com.HAH.mapping.model.service.CourseService;
 @Controller
 @RequestMapping("/course")
 public class CourseController {
-	
+
 	@Autowired
 	private CourseService courseService;
 
+//	This is return model and view
+//	@GetMapping
+//	public ModelAndView index() {
+//		var mv = new ModelAndView();
+//		mv.getModel().put("list", courseService.getAllCourses());
+//		mv.setViewName("course-list");
+//		return mv;
+//	}
+
 	@GetMapping
-	public ModelAndView index() {
-		var mv = new ModelAndView();
-		mv.getModel().put("list", courseService.getAllCourses());
-		mv.setViewName("course-list");
-		return mv;
+	public String index(Map<String, Object> model) {
+		model.put("list", courseService.getAllCourses());
+		return "course-list";
 	}
 
 }
