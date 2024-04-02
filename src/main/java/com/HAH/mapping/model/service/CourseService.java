@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.HAH.mapping.model.dto.Course;
+import com.HAH.mapping.model.dto.JavaCourseLevel;
 
 @Service
 public class CourseService {
@@ -24,10 +25,10 @@ public class CourseService {
 
 	@PostConstruct
 	public void init() {
-		create(new Course("Java Basic", 4, "Basic", 180000));
-		create(new Course("Spring", 5, "Intermediate", 180000));
-		create(new Course("Angular", 3, "Advance", 180000));
-		create(new Course("React", 3, "Advance", 180000));
+		create(new Course("Java Basic", 4, JavaCourseLevel.Basic, 180000));
+		create(new Course("Spring", 5, JavaCourseLevel.Intermediate, 180000));
+		create(new Course("Angular", 3, JavaCourseLevel.Advance, 180000));
+		create(new Course("React", 3, JavaCourseLevel.Advance , 180000));
 
 	}
 

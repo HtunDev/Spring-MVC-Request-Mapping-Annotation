@@ -44,14 +44,14 @@
 						<div class="d-flex">
 							<select id="level" name="level" class="form-control">
 								<option value="">Select One</option>
-								<option value="basic">Basic</option>
-								<option value="intermediate">Intermediate</option>
-								<option value="advance">Advance</option>
+								<option value="Basic">Basic</option>
+								<option value="Intermediate">Intermediate</option>
+								<option value="Advance">Advance</option>
 							</select>
 						</div>
 					</div>
 
-				 	<div class="mb-3">
+					<div class="mb-3">
 						<label class="form-label mb-1" for="fees">Fees</label> <input
 							id="fees" name="fees" type="number"
 							placeholder="Enter Course Fees" class="form-control" />

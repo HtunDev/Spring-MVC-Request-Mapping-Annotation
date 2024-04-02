@@ -1,4 +1,4 @@
-package com.HAH.mapping.controller;
+package com.HAH.mapping.model.dto;
 
 public enum JavaCourseLevel {
 

@@ -25,33 +25,33 @@
 			<div class="col-6">
 
 				<c:url value="/course" var="saveCourseLink"></c:url>
-				<form method="post" action="${ saveCourseLink}">
+				<form method="post" action="${saveCourseLink}">
 
 					<div class="mb-3">
 						<label class="form-label mb-1" for=id>Course id</label> <input
-							id="id" name="id" type="text" placeholder="Enter Course Name"
+							id="id" name="id" type="text" value="${course.id}"
 							readonly="readonly" class="form-control" />
 					</div>
 
 					<div class="mb-3">
 						<label class="form-label mb-1" for="name">Course Name</label> <input
-							id="name" name="name" type="text" placeholder="Enter Course Name"
+							id="name" name="name" type="text" value="${course.name}"
 							readonly="readonly" class="form-control" />
 					</div>
 					<div class="mb-3">
 						<label class="form-label mb-1" for="duration">Duration</label> <input
 							id="duration" name="duration" type="number" readonly="readonly"
-							placeholder="Enter Course Duration" class="form-control" />
+							value="${course.duration}" class="form-control" />
 					</div>
 					<div class="mb-3">
 						<label class="form-label mb-1" for="level">Level</label> <input
-							id="level" name="level" type="text" readonly="readonly"
-							placeholder="Enter Course Level" class="form-control" />
+							id="level" name="level" readonly="readonly"
+							value="${course.level}" class="form-control" />
 					</div>
 					<div class="mb-3">
 						<label class="form-label mb-1" for="fees">Fees</label> <input
 							id="fees" name="fees" type="number" readonly="readonly"
-							placeholder="Enter Course Fees" class="form-control" />
+							value="${course.fees}" class="form-control" />
 					</div>
 
 				</form>

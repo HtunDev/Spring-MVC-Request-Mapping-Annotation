@@ -7,14 +7,13 @@ public class Course {
 	private int id;
 	private String name;
 	private int duration;
-	private String level;
+	private JavaCourseLevel level;
 	private int fees;
 
 	public Course() {
-
 	}
 
-	public Course(String name, int duration, String level, int fees) {
+	public Course(String name, int duration, JavaCourseLevel level, int fees) {
 		super();
 		this.name = name;
 		this.duration = duration;
@@ -46,11 +45,11 @@ public class Course {
 		this.duration = duration;
 	}
 
-	public String getLevel() {
+	public JavaCourseLevel getLevel() {
 		return level;
 	}
 
-	public void setLevel(String level) {
+	public void setLevel(JavaCourseLevel level) {
 		this.level = level;
 	}
 
@@ -76,7 +75,7 @@ public class Course {
 		if (getClass() != obj.getClass())
 			return false;
 		Course other = (Course) obj;
-		return duration == other.duration && fees == other.fees && id == other.id && Objects.equals(level, other.level)
+		return duration == other.duration && fees == other.fees && id == other.id && level == other.level
 				&& Objects.equals(name, other.name);
 	}
 
