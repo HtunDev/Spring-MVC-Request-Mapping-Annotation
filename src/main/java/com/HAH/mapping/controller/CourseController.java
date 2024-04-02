@@ -5,6 +5,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -29,7 +30,16 @@ public class CourseController {
 	@GetMapping
 	public String index(Map<String, Object> model) {
 		model.put("list", courseService.getAllCourses());
-		return "course-list";
+		return "course";
 	}
 
+	@GetMapping("/edit")
+	public String editCourse() {
+		return "course-edit";
+	}
+
+	@PostMapping
+	public String saveCourse() {
+		return "course-details";
+	}
 }

@@ -22,6 +22,12 @@
 		<h1>Course List</h1>
 
 		<div class="mt-4">
+
+			<div>
+				<c:url value="/course/edit" var="courseEditLink"></c:url>
+				<a href="${courseEditLink}" class="btn btn-primary">Add New
+					Course</a>
+			</div>
 			<table class="table">
 
 				<thead>
