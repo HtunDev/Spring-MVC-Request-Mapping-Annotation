@@ -23,6 +23,9 @@
 		<div class="row">
 
 			<div class="col-6">
+				<c:if test="${not empty result}">
+					<div class="alert alert-success">${result}</div>
+				</c:if>
 
 				<c:url value="/course" var="saveCourseLink"></c:url>
 				<form method="post" action="${saveCourseLink}">
